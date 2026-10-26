@@ -1,0 +1,26 @@
+INFO:     Started server process [3352]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50947 - "GET /health HTTP/1.1" 200 OK
+{"event": "booking_confirmed", "request_id": "b95acfd9-761b-495c-8aa1-1c117df7a539", "booking_id": "5d847097-dfef-4b70-9738-443d4cd70e8c", "slot_id": "slot-2"}
+INFO:     127.0.0.1:50950 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50960 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50963 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50956 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50968 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50951 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50962 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50949 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50955 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50961 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50957 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50966 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50954 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50967 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50953 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50965 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50952 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50964 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50958 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50959 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict

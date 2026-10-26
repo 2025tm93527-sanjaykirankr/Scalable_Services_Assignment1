@@ -1,0 +1,12 @@
+INFO:     Started server process [6404]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8002 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51113 - "GET /health HTTP/1.1" 200 OK
+INFO:     Started server process [5700]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8002 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51125 - "GET /health HTTP/1.1" 200 OK
+{"event": "payment_charged", "request_id": "a3359e10-503b-43b2-9634-18b98b2aa30e", "booking_id": "47712942-dbe0-401f-bf68-cc5ba1d4a914", "payment_id": "ce7c3d28-f030-4599-96b1-6779496516d2"}
+INFO:     127.0.0.1:51128 - "POST /api/v1/payments/charge HTTP/1.1" 200 OK

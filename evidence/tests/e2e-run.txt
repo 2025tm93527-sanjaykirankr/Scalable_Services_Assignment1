@@ -1,0 +1,27 @@
+Timestamp (Asia/Kolkata): 2026-10-26T19:07:10+05:30
+Command: C:\Users\Sanjay\Downloads\Scalable_Services_Assignment1\.venv\Scripts\python.exe C:\Users\Sanjay\Downloads\Scalable_Services_Assignment1\scripts\e2e_test.py
+Started: 2026-10-26T19:07:09+05:30
+Exit code: 0
+
+Create booking: 201 {"booking_id":"c0639f91-907c-4c6b-af1a-3b6fc62b61dc","customer_id":"e2e-customer","slot_id":"slot-1","amount":12.5,"status":"CONFIRMED","reservation_id":"2a1c4a3d-0224-4cc9-82f5-38455fdcebdd","payment_id":"bd69effa-1242-4f67-8f3b-29254a9e4ac2","notification_status":"RECORDED"}
+Read booking: 200 {"booking_id":"c0639f91-907c-4c6b-af1a-3b6fc62b61dc","customer_id":"e2e-customer","slot_id":"slot-1","amount":12.5,"status":"CONFIRMED","payment_id":"bd69effa-1242-4f67-8f3b-29254a9e4ac2","created_at":"2026-10-26 13:37:10"}
+
+Isolated database files: {"booking": "20261026-190701-472624_e2e_booking.db", "inventory": "20261026-190701-472624_e2e_inventory.db", "notification": "20261026-190701-472624_e2e_notification.db", "payment": "20261026-190701-472624_e2e_payment.db"}
+Database checks:
+{
+  "booking": {
+    "confirmed_bookings": 1,
+    "idempotency_rows": 1
+  },
+  "inventory": {
+    "reservations": 1,
+    "slot_1": 4
+  },
+  "notification": {
+    "notifications": 1
+  },
+  "payment": {
+    "payments": 1
+  }
+}
+Result: PASS

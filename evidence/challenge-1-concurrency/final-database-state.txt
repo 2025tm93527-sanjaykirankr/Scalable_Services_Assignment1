@@ -1,0 +1,4 @@
+Timestamp (Asia/Kolkata): 2026-10-26T18:48:23+05:30
+Database: C:\Users\Sanjay\Downloads\Scalable_Services_Assignment1\evidence\challenge-1-concurrency\challenge1_inventory.db
+slot-2 (slot_id, capacity, remaining): ('slot-2', 1, 0)
+Reserved slot-2 reservation count: 1

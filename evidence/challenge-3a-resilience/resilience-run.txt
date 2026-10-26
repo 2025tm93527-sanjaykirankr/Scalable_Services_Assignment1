@@ -1,0 +1,13 @@
+Timestamp (Asia/Kolkata): 2026-10-26T18:56:41+05:30
+Command: python evidence/challenge-3a-resilience/run_evidence.py
+Started: 2026-10-26T18:56:36+05:30
+
+Stopped payment-mock-service before this request.
+Failure request: HTTP 503; body={"error": {"code": "PAYMENT_FAILED", "message": "Payment failed after bounded retries; reservation compensation was attempted", "request_id": "7a810f09-830a-448a-b512-cd2723375630"}}
+Database state after failure and compensation: {"bookings": [["FAILED", 1]], "payments": 0, "reservations": [["RELEASED", 1]], "slot_1": [5, 5]}
+
+Restarted payment-mock-service and sent a new request with a new idempotency key.
+Recovery request: HTTP 201; body={"amount": 31.0, "booking_id": "47712942-dbe0-401f-bf68-cc5ba1d4a914", "customer_id": "resilience-demo", "notification_status": "RECORDED", "payment_id": "ce7c3d28-f030-4599-96b1-6779496516d2", "reservation_id": "fc3dc143-ad48-4de1-9ab8-a4db41fa01a7", "slot_id": "slot-1", "status": "CONFIRMED"}
+Database state after recovery: {"bookings": [["CONFIRMED", 1], ["FAILED", 1]], "payments": 1, "reservations": [["RELEASED", 1], ["RESERVED", 1]], "slot_1": [5, 4]}
+
+Result: PASS

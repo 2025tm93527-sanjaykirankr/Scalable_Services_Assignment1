@@ -1,0 +1,26 @@
+Timestamp (Asia/Kolkata): 2026-10-26T18:52:52+05:30
+Command: python evidence/challenge-2-idempotency/run_evidence.py
+Started: 2026-10-26T18:52:50+05:30
+
+Sequential first call: HTTP 201; replay header=None; body={"amount": 19.5, "booking_id": "8f697f87-cf29-4432-9d9a-6582d5f1c735", "customer_id": "idem-demo", "notification_status": "RECORDED", "payment_id": "0fad811e-0bbd-4046-ba0d-f4b25781e3de", "reservation_id": "3e713243-79db-4dae-b3b5-8d00832ace27", "slot_id": "slot-1", "status": "CONFIRMED"}
+Sequential exact replay: HTTP 201; replay header=true; body={"amount": 19.5, "booking_id": "8f697f87-cf29-4432-9d9a-6582d5f1c735", "customer_id": "idem-demo", "notification_status": "RECORDED", "payment_id": "0fad811e-0bbd-4046-ba0d-f4b25781e3de", "reservation_id": "3e713243-79db-4dae-b3b5-8d00832ace27", "slot_id": "slot-1", "status": "CONFIRMED"}
+Changed payload with same key: HTTP 409; body={"error": {"code": "IDEMPOTENCY_CONFLICT", "message": "Key was already used with a different request body", "request_id": "d5908a12-7e55-44c7-8544-982f61c6f085"}}
+Concurrent identical calls: 20 requests; HTTP statuses=[201]; identical response bodies=True; replay headers=19/20
+Concurrent canonical response: {"amount": 19.5, "booking_id": "bb7e515c-2f9b-45fd-ad98-81c0b0bee785", "customer_id": "idem-demo", "notification_status": "RECORDED", "payment_id": "28e3797e-cf72-4bee-8765-335c23d371cb", "reservation_id": "85953ad3-f7ba-4e52-a0e3-27adb966d2c8", "slot_id": "slot-1", "status": "CONFIRMED"}
+
+Database record counts (two distinct idempotency keys were exercised):
+{
+  "booking": {
+    "bookings": 2,
+    "idempotency_keys": 2
+  },
+  "inventory": {
+    "reservations": 2
+  },
+  "notification": {
+    "notifications": 2
+  },
+  "payment": {
+    "payments": 2
+  }
+}

@@ -1,0 +1,24 @@
+Timestamp (Asia/Kolkata): 2026-10-26T19:07:11+05:30
+Command: C:\Users\Sanjay\Downloads\Scalable_Services_Assignment1\.venv\Scripts\python.exe -m unittest discover -s tests -p test_business_rules.py -v
+Started: 2026-10-26T19:07:10+05:30
+Exit code: 0
+
+test_br1_inventory_never_overallocates_last_slot (test_business_rules.BusinessRuleTests.test_br1_inventory_never_overallocates_last_slot) ... {"event": "slot_reserved", "request_id": "bae2f4d7-6f7d-4417-a838-63316fcbd304", "slot_id": "slot-2", "booking_id": "one"}
+ok
+test_br2_requires_valid_fields_positive_amount_and_idempotency_key (test_business_rules.BusinessRuleTests.test_br2_requires_valid_fields_positive_amount_and_idempotency_key) ... ok
+test_br3_same_key_replays_one_result_and_changed_payload_conflicts (test_business_rules.BusinessRuleTests.test_br3_same_key_replays_one_result_and_changed_payload_conflicts) ... {"event": "slot_reserved", "request_id": "48da0214-e31f-49cc-a72f-09b1477b9fb3", "slot_id": "slot-1", "booking_id": "5f826e49-85db-40c3-b68a-bfbd1e6975f9"}
+{"event": "booking_confirmed", "request_id": "438c107b-b09d-4fc5-af64-09efbb622ec9", "booking_id": "5f826e49-85db-40c3-b68a-bfbd1e6975f9", "slot_id": "slot-1"}
+{"event": "idempotency_replay", "request_id": "7e73cd41-2d2f-4c89-af05-6d951734fe21", "idempotency_key": "key-1"}
+ok
+test_br4_payment_failure_releases_inventory_reservation (test_business_rules.BusinessRuleTests.test_br4_payment_failure_releases_inventory_reservation) ... {"event": "slot_reserved", "request_id": "5ba5d56f-5f63-464f-9d93-d1ef23693c26", "slot_id": "slot-1", "booking_id": "cb35a82b-f843-44e6-a3d4-71587d35014c"}
+{"event": "slot_released", "request_id": "12d38cc5-f3f6-4220-bb30-d0bc259c45e3", "slot_id": "slot-1", "booking_id": "cb35a82b-f843-44e6-a3d4-71587d35014c"}
+{"event": "booking_failed", "request_id": "35826843-e580-4d29-b48a-e5b9cbe549fc", "booking_id": "cb35a82b-f843-44e6-a3d4-71587d35014c", "reason": "simulated payment outage"}
+ok
+test_br5_notification_is_attempted_only_after_successful_payment (test_business_rules.BusinessRuleTests.test_br5_notification_is_attempted_only_after_successful_payment) ... {"event": "slot_reserved", "request_id": "abcf9a49-fa5c-43fe-8242-629c0fa6b889", "slot_id": "slot-1", "booking_id": "dd8ebb3a-25d4-45ce-8af2-109afe12846b"}
+{"event": "booking_confirmed", "request_id": "fdea1e34-114b-4264-8122-feaabb895799", "booking_id": "dd8ebb3a-25d4-45ce-8af2-109afe12846b", "slot_id": "slot-1"}
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.223s
+
+OK

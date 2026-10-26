@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-26T18:52:52+05:30",
+  "counts": {
+    "booking": {
+      "bookings": 2,
+      "idempotency_keys": 2
+    },
+    "inventory": {
+      "reservations": 2
+    },
+    "payment": {
+      "payments": 2
+    },
+    "notification": {
+      "notifications": 2
+    }
+  }
+}

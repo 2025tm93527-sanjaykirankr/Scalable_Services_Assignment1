@@ -1,0 +1,8 @@
+Challenge 2 evidence run
+Started: 2026-10-26T18:52:50+05:30
+Finished: 2026-10-26T18:52:52+05:30
+Sequential replay matched: True
+Changed payload rejected with 409: True
+20 concurrent requests returned one identical result: True
+One effect per key in each service database: True
+Result: PASS

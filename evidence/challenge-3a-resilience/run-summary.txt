@@ -1,0 +1,7 @@
+Challenge 3A evidence run
+Started: 2026-10-26T18:56:36+05:30
+Finished: 2026-10-26T18:56:41+05:30
+Payment outage returned 503: True
+Reservation released and capacity restored: True
+Recovery booking succeeded with one payment record: True
+Result: PASS

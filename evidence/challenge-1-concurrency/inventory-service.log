@@ -1,0 +1,26 @@
+INFO:     Started server process [11548]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50944 - "GET /health HTTP/1.1" 200 OK
+{"event": "slot_reserved", "request_id": "b95acfd9-761b-495c-8aa1-1c117df7a539", "slot_id": "slot-2", "booking_id": "5d847097-dfef-4b70-9738-443d4cd70e8c"}
+INFO:     127.0.0.1:50969 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50972 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50973 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50974 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50975 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50976 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50977 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50978 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50979 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50980 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50981 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50982 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50983 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50984 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50985 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50986 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50987 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50988 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50989 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:50990 - "POST /api/v1/slots/slot-2/reserve HTTP/1.1" 409 Conflict

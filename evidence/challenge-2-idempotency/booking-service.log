@@ -1,0 +1,50 @@
+INFO:     Started server process [17260]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51041 - "GET /health HTTP/1.1" 200 OK
+{"event": "booking_confirmed", "request_id": "dede382d-2dfc-47a0-8a30-c4a7e3400903", "booking_id": "8f697f87-cf29-4432-9d9a-6582d5f1c735", "slot_id": "slot-1"}
+INFO:     127.0.0.1:51042 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "a6c51eeb-9341-469d-8096-589f5a923fe8", "idempotency_key": "evidence-sequential-idem"}
+INFO:     127.0.0.1:51046 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51047 - "POST /api/v1/bookings HTTP/1.1" 409 Conflict
+{"event": "booking_confirmed", "request_id": "f3db11cc-7738-4f7e-9745-4ab0c1f67ceb", "booking_id": "bb7e515c-2f9b-45fd-ad98-81c0b0bee785", "slot_id": "slot-1"}
+INFO:     127.0.0.1:51048 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "d5aa2690-4112-46cd-afdd-8aa560581d07", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51067 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "f5991d5a-7215-4855-9e3a-32acb53e5d98", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51050 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "a4baddd1-59e0-4c1a-bccc-9c88bf82c667", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51064 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "6593b844-1d8c-497b-83a4-8b01fba04625", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51069 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "e5a3c348-eef9-4669-a256-7953c44f132e", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51062 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "4eda6792-59f0-4170-84dc-286565a97c69", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51053 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "5ad6182c-d24b-4354-86b5-870e9778ac75", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51058 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "76e481c8-404b-448f-965d-c40fcfa6a067", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51059 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "e1391264-7cf3-4b3b-8036-298913d8f161", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51068 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "52c029d5-5856-4ed7-9cde-c38f36816c2b", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51049 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "b9f25557-78c0-4f35-8eb0-f3010e3518b2", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51056 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "a1cdbb42-bf5f-439d-bed4-7e275f95e367", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51066 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "a6af0efe-e912-43d2-8e7a-e1e3974042c8", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51063 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "8e5762bf-a569-4f03-b935-d61077350636", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51055 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "2056dba8-c00d-4e77-9e77-b881701c66fe", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51060 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "59821d79-34c8-4ad2-a844-09896386b065", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51065 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "bbfb9d13-d1fe-4206-8ec9-26217498ff6b", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51051 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "9ffa3a00-a6c7-403d-81d6-603e148cef24", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51054 - "POST /api/v1/bookings HTTP/1.1" 201 Created
+{"event": "idempotency_replay", "request_id": "ddfdfb53-f8d5-4ace-a9f5-5790f745398b", "idempotency_key": "evidence-concurrent-idem"}
+INFO:     127.0.0.1:51057 - "POST /api/v1/bookings HTTP/1.1" 201 Created

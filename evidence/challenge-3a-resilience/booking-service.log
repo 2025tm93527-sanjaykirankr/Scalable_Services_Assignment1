@@ -1,0 +1,11 @@
+INFO:     Started server process [7292]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51115 - "GET /health HTTP/1.1" 200 OK
+{"event": "payment_retry", "request_id": "7a810f09-830a-448a-b512-cd2723375630", "attempt": 1, "delay_seconds": 0.23}
+{"event": "payment_retry", "request_id": "7a810f09-830a-448a-b512-cd2723375630", "attempt": 2, "delay_seconds": 0.367}
+{"event": "booking_failed", "request_id": "7a810f09-830a-448a-b512-cd2723375630", "booking_id": "4602b05d-1559-43f3-8877-09d88e2ec09c", "reason": "HTTPConnectionPool(host='127.0.0.1', port=8002): Max retries exceeded with url: /api/v1/payments/charge (Caused by ConnectTimeoutError(<HTTPConnection(host='127.0.0.1', port=8002) at 0x256052e48a0>, 'Connection to 127.0.0.1 timed out. (connect timeout=1.0)'))"}
+INFO:     127.0.0.1:51116 - "POST /api/v1/bookings HTTP/1.1" 503 Service Unavailable
+{"event": "booking_confirmed", "request_id": "a3359e10-503b-43b2-9634-18b98b2aa30e", "booking_id": "47712942-dbe0-401f-bf68-cc5ba1d4a914", "slot_id": "slot-1"}
+INFO:     127.0.0.1:51126 - "POST /api/v1/bookings HTTP/1.1" 201 Created

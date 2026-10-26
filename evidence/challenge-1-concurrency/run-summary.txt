@@ -1,0 +1,5 @@
+Challenge 1 evidence run
+Started: 2026-10-26T18:48:20+05:30
+Finished: 2026-10-26T18:48:23+05:30
+Concurrency script exit code: 0
+Final slot state: ('slot-2', 1, 0); active reservations: 1

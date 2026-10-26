@@ -1,0 +1,9 @@
+flowchart LR
+    C[API Client] -->|REST /api/v1/bookings| B[Booking Service :8000]
+    B -->|REST reserve/release| I[Inventory Service :8001]
+    B -->|REST charge; bounded retry| P[Payment Mock :8002]
+    B -->|REST notification| N[Notification Mock :8003]
+    B --- DB1[(Booking DB)]
+    I --- DB2[(Inventory DB)]
+    P --- DB3[(Payment DB)]
+    N --- DB4[(Notification DB)]

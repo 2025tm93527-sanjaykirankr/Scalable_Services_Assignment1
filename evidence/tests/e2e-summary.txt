@@ -1,0 +1,6 @@
+End-to-end evidence run
+Started: 2026-10-26T19:07:09+05:30
+Finished: 2026-10-26T19:07:10+05:30
+Script exit code: 0
+Cross-service database checks: PASS
+Result: PASS

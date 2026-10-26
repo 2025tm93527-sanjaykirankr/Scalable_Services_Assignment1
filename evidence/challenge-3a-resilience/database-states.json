@@ -1,0 +1,48 @@
+{
+  "after_failure": {
+    "slot_1": [
+      5,
+      5
+    ],
+    "reservations": [
+      [
+        "RELEASED",
+        1
+      ]
+    ],
+    "bookings": [
+      [
+        "FAILED",
+        1
+      ]
+    ],
+    "payments": 0
+  },
+  "after_recovery": {
+    "slot_1": [
+      5,
+      4
+    ],
+    "reservations": [
+      [
+        "RELEASED",
+        1
+      ],
+      [
+        "RESERVED",
+        1
+      ]
+    ],
+    "bookings": [
+      [
+        "CONFIRMED",
+        1
+      ],
+      [
+        "FAILED",
+        1
+      ]
+    ],
+    "payments": 1
+  }
+}

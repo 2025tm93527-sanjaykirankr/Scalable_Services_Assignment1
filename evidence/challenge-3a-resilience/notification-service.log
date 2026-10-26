@@ -1,0 +1,7 @@
+INFO:     Started server process [19652]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8003 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51114 - "GET /health HTTP/1.1" 200 OK
+{"event": "notification_recorded", "request_id": "a3359e10-503b-43b2-9634-18b98b2aa30e", "booking_id": "47712942-dbe0-401f-bf68-cc5ba1d4a914"}
+INFO:     127.0.0.1:51129 - "POST /api/v1/notifications HTTP/1.1" 200 OK

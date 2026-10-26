@@ -1,0 +1,28 @@
+Timestamp (Asia/Kolkata): 2026-10-26T18:48:23+05:30
+Command: C:\Users\Sanjay\Downloads\Scalable_Services_Assignment1\.venv\Scripts\python.exe C:\Users\Sanjay\Downloads\Scalable_Services_Assignment1\scripts\concurrency_test.py
+Exit code: 0
+
+Sending 20 parallel requests for slot-2 (capacity 1).
+HTTP 201 successes: 1
+HTTP 409 rejections: 19
+PASS
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"ff45db31-50cc-4acd-ad52-81d227a2b7e4"}}
+201 {"booking_id":"5d847097-dfef-4b70-9738-443d4cd70e8c","customer_id":"load-user-1","slot_id":"slot-2","amount":10.0,"status":"CONFIRMED","reservation_id":"b9db2bf7-44f2-4528-b3cc-adf
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"0d49dc61-b8e6-474d-8d8e-d917ca68f60e"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"244ba9da-e0d3-41dd-b3f2-05d33d2ef701"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"6664c97c-74b7-40bc-ae4d-c1a956f1757f"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"f57697c3-c6e1-40a1-b688-99b8a466ce4c"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"16329994-1846-4e90-ba5d-6b0666a87c3e"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"36cdaf0e-a106-437f-841c-4372d56ac0b7"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"023bba41-500e-47c0-8483-a3edcb14a3e6"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"854bff6a-fa9c-4b04-adc8-9def31e07a26"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"b2c5f44e-38f8-43fa-af32-1bf02e0f0088"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"cfe17841-f70c-4bc0-a5ee-1e14d4e54f87"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"9ef8065d-8344-4dd9-b267-8f66ff406432"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"398539f8-9a97-4b0c-b022-1227fd4d7d4c"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"7e4f8a3f-cee7-4856-a9b2-bfd88ed2e83e"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"b54e713e-cd55-450a-8097-6f05ff82a620"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"ab8d2651-0080-48ea-b93c-4ac035f79319"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"630c0273-b95c-423a-bf75-a3c3b9020606"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"a9bd41be-66dc-4cef-b489-bf289989d770"}}
+409 {"error":{"code":"SLOT_FULL","message":"No capacity remains for this slot","request_id":"b754e243-6f11-4b31-b7a4-6a8e1170ae8b"}}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-10-26T19:07:10+05:30",
+  "databases": {
+    "inventory": "20261026-190701-472624_e2e_inventory.db",
+    "payment": "20261026-190701-472624_e2e_payment.db",
+    "notification": "20261026-190701-472624_e2e_notification.db",
+    "booking": "20261026-190701-472624_e2e_booking.db"
+  },
+  "checks": {
+    "booking": {
+      "confirmed_bookings": 1,
+      "idempotency_rows": 1
+    },
+    "inventory": {
+      "reservations": 1,
+      "slot_1": 4
+    },
+    "payment": {
+      "payments": 1
+    },
+    "notification": {
+      "notifications": 1
+    }
+  }
+}
