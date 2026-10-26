@@ -339,7 +339,7 @@ def main():
     cover = [
         [P("Submission details", "CellHead"), P("Current information", "CellHead")],
         [P("Application", "Cell"), P("Appointment booking using four independently runnable Python and FastAPI services", "Cell")],
-        [P("Team", "Cell"), P("[Add student names and IDs; team size maximum four]", "Cell")],
+        [P("Team", "Cell"), P("Team 8; [add student names and IDs; maximum four students]", "Cell")],
         [P("Repository", "Cell"), P("[Add accessible GitHub repository URL]", "Cell")],
         [P("Demo video", "Cell"), P("[Add Google Drive link to the 8-10 minute video]", "Cell")],
         [P("Report date", "Cell"), P("26 October 2026", "Cell")],
