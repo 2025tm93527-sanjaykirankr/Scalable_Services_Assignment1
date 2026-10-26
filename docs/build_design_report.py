@@ -339,7 +339,7 @@ def main():
     cover = [
         [P("Submission details", "CellHead"), P("Current information", "CellHead")],
         [P("Application", "Cell"), P("Appointment booking using four independently runnable Python and FastAPI services", "Cell")],
-        [P("Team", "Cell"), P("Group 8; primary contributor: Sanjay Kiran K R (154403)", "Cell")],
+        [P("Team", "Cell"), P("Group 8; primary contributor: Sanjay Kiran K R (2025TM93527)", "Cell")],
         [P("Repository", "Cell"), P('<link href="https://github.com/2025tm93527-sanjaykirankr/Scalable_Services_Assignment1">Scalable_Services_Assignment1</link><br/>https://github.com/2025tm93527-sanjaykirankr/Scalable_Services_Assignment1', "Cell")],
         [P("Demo video", "Cell"), P("[Add Google Drive link to the 8-10 minute video]", "Cell")],
         [P("Report date", "Cell"), P("27 October 2026", "Cell")],
@@ -488,11 +488,11 @@ def main():
               P("This version lists the primary contributor only, as requested. Confirm whether the course requires every Group 8 member to appear in this table before submission.", "Body"),
               table([
                   [P("Member", "CellHead"), P("Owned work", "CellHead"), P("Evidence (commits, files, demo)", "CellHead")],
-                  [P("Sanjay Kiran K R (154403)", "Cell"), P("Major contribution: project coordination, service design and integration oversight, test and evidence review, and report finalization.", "Cell"), P("Repository review, challenge and test evidence, report. AI assistance is disclosed in Appendix C.", "Cell")],
+                  [P("Sanjay Kiran K R (2025TM93527)", "Cell"), P("Major contribution: project coordination, service design and integration oversight, test and evidence review, and report finalization.", "Cell"), P("Repository review, challenge and test evidence, report. AI assistance is disclosed in Appendix C.", "Cell")],
               ], [35*mm, 77*mm, 61*mm]),
               P("Appendix B. Individual reflections", "Section"),
               P("Each student should add an individual half-page reflection describing what they built, the hardest problem they solved, and what they would change. These personal statements are intentionally not fabricated here.", "Body"),
-              P("Sanjay Kiran K R (154403) - [Add your half-page reflection: what you built, the hardest problem solved, and what you would change.]", "BodySmall"),
+              P("Sanjay Kiran K R (2025TM93527) - [Add your half-page reflection: what you built, the hardest problem solved, and what you would change.]", "BodySmall"),
               P("Appendix C. AI-use declaration", "Section"),
               P("During preparation of this report and evidence package, OpenAI ChatGPT/Codex was used to review the assignment brief and repository, help add business-rule tests, create repeatable evidence-runner scripts, execute local checks, and draft report text. The team must review the generated material, ensure it understands and can explain the code, and add any AI tools used by team members for other work. The team remains responsible for the final submission and its accuracy.", "Body"),
               P("Appendix D. Evidence index", "Section"),
