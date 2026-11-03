@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: booking-data
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: booking-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: booking-service
+  template:
+    metadata:
+      labels:
+        app: booking-service
+    spec:
+      containers:
+        - name: booking-service
+          image: assignment2-booking:local
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: BOOKING_DB
+              value: /data/booking.db
+            - name: INVENTORY_URL
+              value: http://inventory-service:8001
+            - name: PAYMENT_URL
+              value: http://payment-mock-service:8002
+            - name: NOTIFICATION_URL
+              value: http://notification-mock-service:8003
+          volumeMounts:
+            - name: database
+              mountPath: /data
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+      volumes:
+        - name: database
+          persistentVolumeClaim:
+            claimName: booking-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: booking-service
+spec:
+  type: ClusterIP
+  selector:
+    app: booking-service
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http

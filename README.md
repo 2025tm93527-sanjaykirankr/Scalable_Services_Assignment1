@@ -1,6 +1,85 @@
 # Scalable Services — Assignment 1
 ## Appointment Booking Microservices (Python / FastAPI / SQLite)
 
+## Assignment 2 — Docker deployment
+
+The repository now includes a Dockerfile for each of the four services and a Docker Compose deployment. Run these commands from the repository root:
+
+```bash
+docker compose up --build
+```
+
+Compose waits for the three downstream services to pass their `/health` checks before starting the booking service. SQLite files live in separate named volumes, so they survive container recreation and `docker compose down`. To stop and start the stack again, use:
+
+```bash
+docker compose down
+docker compose up --build
+```
+
+Check deployment state and logs:
+
+```bash
+docker compose ps
+docker compose logs -f
+```
+
+Open the booking API at <http://localhost:8000/docs>. The inventory, payment mock, and notification mock APIs are on ports 8001, 8002, and 8003. For the main workflow, create a booking using the curl example in “Main flow demo” below, changing its idempotency key for each new booking. The same key and same body deliberately replays the original booking.
+
+### Reproduce and diagnose the deployment fault
+
+The optional `docker-compose.challenge.yml` override deliberately points booking at the wrong **internal** inventory port. This is a controlled reproduction of a realistic deployment configuration error; describe it as a reproduced fault in the report, not as an incident that happened spontaneously.
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.challenge.yml up --build
+docker compose ps
+docker compose logs booking-service
+```
+
+The booking service should be healthy, but a booking attempt will fail when it tries to reach inventory. Compare `INVENTORY_URL` in `docker-compose.yml` with the inventory service's listening port and the `8099` override. The fix is to use `http://inventory-service:8001` from within the Compose network. Stop the challenge stack, then launch the base configuration and repeat the same workflow with a fresh idempotency key:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.challenge.yml down
+docker compose up --build
+```
+
+Use service DNS names and container ports for traffic between containers; host-published ports are for access from your computer. `docker-compose.challenge.yml` is intentionally broken and must not be included in a normal deployment.
+
+`PAYMENT_MODE` is configurable via the environment or a local `.env` file. Copy `.env.example` to `.env` only if you need to override the default. Never add real credentials to the repository; this demo uses mock payment and notification services and has no secrets.
+
+For the report outline and the evidence/team details you still need to supply, see [`docs/assignment2-deployment-report.md`](docs/assignment2-deployment-report.md).
+
+### Optional advanced task — Minikube / Kubernetes
+
+The `k8s/` directory contains Kubernetes Deployments, ClusterIP Services, readiness/liveness probes, and a separate persistent volume claim for each SQLite database. These manifests use local image names and `imagePullPolicy: Never`, so build and load each image into Minikube before applying them. On Windows, install Minikube with `winget install Kubernetes.minikube` if needed. Minikube's Docker driver uses the working Docker Desktop Linux engine.
+
+From the repository root, with Docker Desktop running:
+
+```powershell
+minikube start --driver=docker --cpus=2 --memory=3500 --cache-images=false
+docker build -t assignment2-booking:local .\services\booking-service
+docker build -t assignment2-inventory:local .\services\inventory-service
+docker build -t assignment2-payment:local .\services\payment-mock-service
+docker build -t assignment2-notification:local .\services\notification-mock-service
+minikube image load assignment2-booking:local
+minikube image load assignment2-inventory:local
+minikube image load assignment2-payment:local
+minikube image load assignment2-notification:local
+kubectl apply -f .\k8s\
+kubectl rollout status deployment/booking-service
+kubectl rollout status deployment/inventory-service
+kubectl rollout status deployment/payment-mock-service
+kubectl rollout status deployment/notification-mock-service
+kubectl get pods,services,pvc
+```
+
+In a second terminal, forward the booking API to port 18000 (using a separate host port avoids conflict if the Compose stack is still running):
+
+```powershell
+kubectl port-forward service/booking-service 18000:8000
+```
+
+Submit a booking to `http://localhost:18000/api/v1/bookings` using the same JSON and required `Idempotency-Key` header shown in “Main flow demo.” Confirm the response is `CONFIRMED`; this workflow exercises booking, inventory, payment, and notification through the Kubernetes deployment. Show the pods, services, PVCs, and the successful request in the demo. Stop Minikube with `minikube stop` when finished.
+
 This project is a runnable educational implementation aligned to the assignment brief: four independently runnable services, separate SQLite databases, REST-only service communication, a cross-service booking transaction, concurrency protection, idempotency, and a mock downstream dependency. The selected optional challenge is **3A: Resilience** (bounded retries with exponential backoff/jitter and graceful failure).
 
 > Important: This is a working reference implementation for learning and adaptation. Run it, inspect it, capture your own terminal/API evidence, and make sure every team member can explain it. The assignment requires a PDF report, evidence, demo video, contribution/reflection, and an AI-use declaration; those cannot be truthfully completed without your own execution and team details.

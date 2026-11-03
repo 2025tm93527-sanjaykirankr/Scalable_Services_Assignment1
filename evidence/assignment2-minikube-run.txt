@@ -1,0 +1,25 @@
+Assignment 2 Minikube deployment evidence
+Date: 2026-10-31
+Driver: Docker Desktop Linux engine
+Minikube: v1.39.0
+Kubernetes: v1.37.0
+
+Cluster status: Ready
+Deployments: booking-service, inventory-service, payment-mock-service, notification-mock-service
+Rollout: all four deployments successfully rolled out, 1/1 pod each
+Persistent volumes: booking-data, inventory-data, payment-data, notification-data all Bound (1Gi each)
+Access path: kubectl port-forward service/booking-service 18000:8000
+
+End-to-end booking response through http://127.0.0.1:18000/api/v1/bookings:
+{
+  "booking_id": "ea47047f-99ff-4924-b3b2-a92c5f4d80ce",
+  "customer_id": "minikube-check",
+  "slot_id": "slot-1",
+  "amount": 31.5,
+  "status": "CONFIRMED",
+  "reservation_id": "2ba8e1cc-f5e5-4b93-a85c-db84e916d859",
+  "payment_id": "490d0673-83e6-48e3-86dd-0d156b30b431",
+  "notification_status": "RECORDED"
+}
+
+The deployment used local images with imagePullPolicy Never. The workflow reached booking, inventory, payment mock, and notification mock inside Kubernetes. The port-forward process was stopped after the check; the Minikube cluster remains available.

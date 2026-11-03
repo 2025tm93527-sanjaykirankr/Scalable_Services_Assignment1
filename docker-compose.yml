@@ -1,0 +1,57 @@
+services:
+  inventory-service:
+    build: ./services/inventory-service
+    environment:
+      INVENTORY_DB: /data/inventory.db
+    ports:
+      - "8001:8001"
+    volumes:
+      - inventory-data:/data
+    restart: unless-stopped
+
+  payment-mock-service:
+    build: ./services/payment-mock-service
+    environment:
+      PAYMENT_DB: /data/payment.db
+      PAYMENT_MODE: ${PAYMENT_MODE:-success}
+    ports:
+      - "8002:8002"
+    volumes:
+      - payment-data:/data
+    restart: unless-stopped
+
+  notification-mock-service:
+    build: ./services/notification-mock-service
+    environment:
+      NOTIFICATION_DB: /data/notification.db
+    ports:
+      - "8003:8003"
+    volumes:
+      - notification-data:/data
+    restart: unless-stopped
+
+  booking-service:
+    build: ./services/booking-service
+    environment:
+      BOOKING_DB: /data/booking.db
+      INVENTORY_URL: http://inventory-service:8001
+      PAYMENT_URL: http://payment-mock-service:8002
+      NOTIFICATION_URL: http://notification-mock-service:8003
+    ports:
+      - "8000:8000"
+    volumes:
+      - booking-data:/data
+    depends_on:
+      inventory-service:
+        condition: service_healthy
+      payment-mock-service:
+        condition: service_healthy
+      notification-mock-service:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  booking-data:
+  inventory-data:
+  payment-data:
+  notification-data:

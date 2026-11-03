@@ -1,0 +1,6 @@
+# Deliberate deployment fault for the troubleshooting demonstration.
+# The booking container uses an incorrect internal port for inventory.
+services:
+  booking-service:
+    environment:
+      INVENTORY_URL: http://inventory-service:8099
